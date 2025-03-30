@@ -119,23 +119,11 @@ func WalkingSpentCalories(steps int, weight, height float64, duration time.Durat
 // weight, height float64 — вес и рост пользователя.
 func TrainingInfo(data string, weight, height float64) string {
 	// ваш код ниже
-	//	parsed := strings.Split(data, ",")
 	steps, trainingType, duration, err := parseTraining(data)
 	if err != nil {
 		return fmt.Sprintf("%v\n", err)
 	}
-	/*	steps, err := strconv.Atoi(parsed[0])
-		if err != nil {
-			return fmt.Sprint(err)
-		}
 
-		trainingType := parsed[1]
-
-		duration, err := time.ParseDuration(parsed[2])
-		if err != nil {
-			return fmt.Sprint(err)
-		}
-	*/
 	dist := distance(steps)
 	speed := meanSpeed(steps, duration)
 
